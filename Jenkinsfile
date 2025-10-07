@@ -16,9 +16,12 @@ pipeline {
             }
         }
         stage('docker build'){
-            sh '''
-            docker build -t my-next-app .
-            '''
+            steps {
+                sh '''
+                docker build -t my-next-app .
+                '''
+            }
+            
         }
     }
 }
