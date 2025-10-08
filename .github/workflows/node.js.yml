@@ -32,7 +32,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: next-build
-        path: .next/
+        path: ${{ github.workspace }}/.next
+        if-no-files-found: error
     
   docker_build_and_push :
     needs: build
