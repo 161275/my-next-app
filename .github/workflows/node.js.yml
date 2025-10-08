@@ -46,6 +46,7 @@ jobs:
     - name: Download build artifact
       uses: actions/download-artifact@v4
       with:
+        include-hidden-files: true
         name: next-build
         path: .next
     - name: checkout
