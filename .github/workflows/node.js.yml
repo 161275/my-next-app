@@ -28,11 +28,14 @@ jobs:
     - run: npm run build --if-present
     - name: Verify .next exists
       run: ls -la .next
+    - name: Debug check before upload
+      run: pwd && ls -la && ls -la .next
+
     - name: Upload build output
       uses: actions/upload-artifact@v4
       with:
         name: next-build
-        path: ${{ github.workspace }}/.next
+        path: ${{ github.workspace }}/.
         if-no-files-found: error
     
   docker_build_and_push :
