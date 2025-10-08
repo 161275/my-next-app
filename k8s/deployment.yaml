@@ -20,5 +20,5 @@ spec:
         ports:
         - containerPort: 3000
       imagePullSecrets:
-        - name: ghcr-secret
+        # - name: ghcr-secret       ## can be removed since image is in public registry
 
