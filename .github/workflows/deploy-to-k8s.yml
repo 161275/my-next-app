@@ -1,6 +1,10 @@
 name: Deploy to EC2 Kubernetes Cluster
 
 on:
+  workflow_run:
+    workflows: ["Node.js CI"] # This workflow will be triggered by "Build and Test"
+    types:
+      - completed
   push:
     branches: [main]
 
