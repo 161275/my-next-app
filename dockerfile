@@ -7,9 +7,9 @@ WORKDIR /app
 COPY package*.json ./
 # COPY node_modules ./node_modules
 RUN npm ci
-# COPY . .
-# RUN npm run build
-COPY .next ./.next
+COPY . .
+RUN npm run build
+# COPY .next ./.next
 
 
 EXPOSE 3000
