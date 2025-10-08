@@ -60,7 +60,7 @@ jobs:
           docker login ghcr.io --username ${{ github.actor }} --password ${{ secrets.GH_PAT }}
           docker push ghcr.io/${{ github.repository_owner }}/my-next-app:latest
 
-  deploy on kubernetes:
+  deploy_on_kubernetes:
     needs: docker_build_and_push
     runs-on: self-hosted
 
