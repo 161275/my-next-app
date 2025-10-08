@@ -59,6 +59,22 @@ jobs:
       run: | 
           docker login ghcr.io --username ${{ github.actor }} --password ${{ secrets.GH_PAT }}
           docker push ghcr.io/${{ github.repository_owner }}/my-next-app:latest
-    
-    # - run: npm test
+
+  deploy on kubernetes:
+    need: docker_build_and_push
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Verify cluster access
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+
+      - name: Deploy app
+        run: |
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
 
