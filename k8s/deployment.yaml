@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: next-app
-  label: 
+  labels: 
      app: next-app
 spec:
   replicas: 1
