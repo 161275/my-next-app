@@ -19,4 +19,6 @@ spec:
         image: "ghcr.io/161275/my-next-app:latest"
         ports:
         - containerPort: 3000
+      imagePullSecrets:
+        - name: ghcr-secret
 
