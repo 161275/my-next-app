@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: next-app
-        image: "ghcr.io/${{ github.repository_owner }}/my-next-app:latest"
+        image: "ghcr.io/161275/my-next-app:latest"
         ports:
         - containerPort: 3000
 
