@@ -15,7 +15,7 @@
 5. login on GHCR using PAT and pushed the image.
 6. created another job for the deployment on kubernetes cluster 
  
- ![alt text](image.png)
+![alt text](<Screenshot 2025-10-09 at 2.49.15 AM.png>)
 
 **Dockerfile optimization**
 1. using node alpine(light weight) as base image 
