@@ -49,8 +49,8 @@ jobs:
         include-hidden-files: true
         name: next-build
         path: .next
-    - name: checkout
-      uses: actions/checkout@v4
+    # - name: checkout
+    #   uses: actions/checkout@v4
     - name: Debug check before build
       run: pwd && ls -la && ls -la .next
     - name: build docker image
