@@ -13,7 +13,7 @@
 3. created node js github action workflow tried to build application locally and copy only dependencied and .next folder to docker image with node:18 as base image
 4. Dockerization of image created with proper tagging
 5. login on GHCR using PAT and pushed the image.
-6. created another job for the deployment on kubernetes cluster 
+6. created another job for the deployment on kubernetes cluster .
  
 ![alt text](<Screenshot 2025-10-09 at 2.49.15 AM.png>)
 
