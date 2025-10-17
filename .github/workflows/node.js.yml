@@ -120,29 +120,30 @@ jobs:
 
     
 
-  deploy_on_kubernetes:
-    needs: push-docker-image
-    runs-on: self-hosted
+  # deploy_on_kubernetes:
+  #   needs: push-docker-image
+  #   runs-on: self-hosted
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v4
 
-      - name: Verify cluster access
-        run: |
-          kubectl cluster-info
-          kubectl get nodes
+  #     - name: Verify cluster access
+  #       run: |
+  #         kubectl cluster-info
+  #         kubectl get nodes
 
-      - name: Deploy app
-        run: |
-          kubectl apply -f k8s/deployment.yaml
-          kubectl apply -f k8s/service.yaml
+  #     - name: Deploy app
+  #       run: |
+  #         kubectl apply -f k8s/deployment.yaml
+  #         kubectl apply -f k8s/service.yaml
 
   helm-dry-run:
+    needs: push-docker-image
     runs-on: self-hosted
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Helm Dry Run Install
         run: |
-          helm install next-app1 ./helm-next-app --dry-run --debug
+          helm install next-app1 ./helm-next-app 
