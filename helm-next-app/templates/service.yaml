@@ -1,4 +1,5 @@
-{{- with .Values.next-app.service }}
+
+{{- with .Values.nextapp.service }}
 apiVersion: v1
 kind: Service
 metadata: 
@@ -14,4 +15,4 @@ spec:
   - name: http
     port: {{ .port }}
 {{- end }}
-    targetPort: {{ .Values.next-app.deployment.port }}
+    targetPort: {{ .Values.nextapp.deployment.port }}

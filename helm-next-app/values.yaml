@@ -1,8 +1,8 @@
-next-app:
+nextapp:
   deployment:
     replicas: 2
     image: 
-      repository: "ghcr.io/161275/my-next-app:latest"
+      repository: "ghcr.io/161275/my-next-app"
       tag: latest
     labels: 
       app: next-app
