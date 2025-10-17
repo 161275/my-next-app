@@ -108,7 +108,8 @@ jobs:
           severity: 'CRITICAL'
 
   push-docker-image:
-    runs-on: trivy-scan
+    needs: trivy-scan
+    runs-on: self-hosted
     steps:
       - name: Push Docker image
         run: |
