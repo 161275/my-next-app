@@ -13,7 +13,7 @@
 3. created node js github action workflow tried to build application locally and copy only dependencied and .next folder to docker image with node:18 as base image
 4. Dockerization of image created with proper tagging
 5. login on GHCR using PAT and pushed the image.
-6. created another job for the deployment on kubernetes cluster 
+6. created another job for the deployment on kubernetes cluster .
  
 ![alt text](<Screenshot 2025-10-09 at 2.49.15 AM.png>)
 
@@ -41,7 +41,7 @@
 **Troubleshooting steps:**
 1. when copying .next directory after creating on local to save build time not downloading and uploading artifacts (though now commented because building everything in the image itself, can check commented code in workflow file)
 2. Imagepullbackoff > because not created buildx (for all arch platforms amd64 and arm64) in the first instance and k8s cluster using amd64 .
-3. authentication Issue during deployment or pod creation image was in private registry then I created a registry secret and used imagePullSecrets in deployment.yaml (but now I made it pulic so can be removesd and no need to create secret )
+3. authentication Issue during deployment or pod creation image was in private registry then I created a registry secret and used imagePullSecrets in deployment.yaml (but now I made it pulic so can be removesd and no need to create secret ).
 
 Summary:
 This project demonstrates a complete CI/CD pipeline for a Next.js application, automating build, containerization, and deployment to a Kubernetes cluster using GitHub Actions and GHCR.
