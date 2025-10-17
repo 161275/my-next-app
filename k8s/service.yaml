@@ -11,6 +11,5 @@ spec:
     app: next-app
   ports:
   - name: http
-  # - nodePort: 31005
     targetPort: 3000
     port: 80
