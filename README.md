@@ -21,7 +21,7 @@
 1. using node alpine(light weight) as base image 
 2. copy package.json and install dependencies (rarely changes and docker will use chached layer and saves time during build)
 3. then copied rest of the files that are frequently changes with new features or otherwise 
-4. exposes port 3000 for the container and used cmd run on container initialization
+4. exposes port 3000 for the container and used cmd run on container initialization.
 
 **Kubernetes Menifests**
 1. deployment.yaml
