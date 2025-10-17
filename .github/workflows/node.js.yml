@@ -93,9 +93,10 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --no-cache -t ghcr.io/${{ github.repository_owner }}/my-next-app:latest .
+          docker build -t ghcr.io/${{ github.repository_owner }}/my-next-app:latest .
 
   trivy-scan:
+    needs: build-docker-image
     runs-on: self-hosted
     steps:
       - name: Scan Docker image with Trivy
@@ -107,7 +108,7 @@ jobs:
           severity: 'CRITICAL'
 
   push-docker-image:
-    runs-on: self-hosted
+    runs-on: trivy-scan
     steps:
       - name: Push Docker image
         run: |
@@ -117,7 +118,7 @@ jobs:
     
 
   deploy_on_kubernetes:
-    needs: build-and-push
+    needs: push-docker-image
     runs-on: self-hosted
 
     steps:
