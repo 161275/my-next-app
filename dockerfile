@@ -1,10 +1,10 @@
 FROM node:18-alpine
 WORKDIR /app
 
-COPY package*.json ./
+COPY app-dir/package*.json ./
 RUN npm ci
 
-COPY . .
+COPY app-dir/. .
 RUN npm run build
 
 EXPOSE 3000
