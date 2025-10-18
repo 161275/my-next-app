@@ -13,6 +13,7 @@
 5. check the next-svc (load balancer) external IP (eg. http://a4523fde6ec9e40e7b3f0554933cce2c-9224b886b7cbba06.elb.us-east-1.amazonaws.com/)
 
 **Flow github action pipeline**
+-> **one click whole automated pipeline. (just give one git push whole application will build -> security scan -> push on GHCR -> helm cahrt upgrade on EKS -> live application)**
 1. Build docker image
 2. trivy scan
 3. login on GHCR using PAT and pushed the image.
