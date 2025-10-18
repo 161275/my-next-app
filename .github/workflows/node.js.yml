@@ -66,20 +66,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'npm'
+      # - name: Setup Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 18
+      #     cache: 'npm'
 
       # 3️⃣ Install and auto-fix vulnerabilities before Docker build
-      - name: Install dependencies and fix vulnerabilities
-        run: |
-          npm ci
-          echo "Running npm audit fix..."
-          npm audit fix || true
-          echo "Verifying updated dependencies..."
-          npm ls cross-spawn || true
+      # - name: Install dependencies and fix vulnerabilities
+      #   run: |
+      #     npm ci
+      #     echo "Running npm audit fix..."
+      #     npm audit fix || true
+      #     echo "Verifying updated dependencies..."
+      #     npm ls cross-spawn || true
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
